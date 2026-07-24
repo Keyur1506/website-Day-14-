@@ -1,17 +1,16 @@
-// ==========================================
-// SHOPINDIA JAVASCRIPT PART - 1
-// ==========================================
+/* ==========================================
+   SHOPINDIA JAVASCRIPT PART 1
+   NAVBAR + MOBILE MENU + SEARCH + HERO
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ==========================================
-    // MOBILE MENU
-    // ==========================================
+    // ================= MOBILE MENU =================
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
 
         menuToggle.addEventListener("click", () => {
 
@@ -33,11 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // ================= CLOSE MENU =================
+
     document.querySelectorAll(".nav-links a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            navLinks.classList.remove("active");
+            if (navLinks) {
+
+                navLinks.classList.remove("active");
+
+            }
 
             if (menuToggle) {
 
@@ -50,11 +55,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // ==========================================
-    // BACK TO TOP
-    // ==========================================
+    // ================= SEARCH =================
 
-    const backTop = document.querySelector(".back-top");
+    const searchInput =
+        document.querySelector(".search-box input");
+
+    if (searchInput) {
+
+        searchInput.addEventListener("keyup", function () {
+
+            const value =
+                this.value.toLowerCase();
+
+            document
+                .querySelectorAll(".product-card")
+                .forEach(card => {
+
+                    const name =
+                        card.querySelector("h3")
+                        .innerText
+                        .toLowerCase();
+
+                    if (name.includes(value)) {
+
+                        card.style.display = "block";
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+        });
+
+    }
+
+    // ================= SMOOTH SCROLL =================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const href = this.getAttribute("href");
+
+        // Ignore empty '#'
+        if (href === "#") return;
+
+        const target = document.querySelector(href);
+
+        if (target) {
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+    });
+
+});
+    // ================= BACK TO TOP =================
+
+    const backTop =
+        document.querySelector(".back-top");
 
     window.addEventListener("scroll", () => {
 
@@ -72,16 +137,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // ==========================================
-    // NEWSLETTER
-    // ==========================================
+    if (backTop) {
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+    // ================= NEWSLETTER =================
 
     const newsletter =
         document.querySelector(".newsletter-form");
 
     if (newsletter) {
 
-        newsletter.addEventListener("submit", function (e) {
+        newsletter.addEventListener("submit", e => {
 
             e.preventDefault();
 
@@ -93,16 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // ==========================================
-    // CONTACT FORM
-    // ==========================================
+    // ================= CONTACT =================
 
     const contact =
         document.querySelector(".contact-form");
 
     if (contact) {
 
-        contact.addEventListener("submit", function (e) {
+        contact.addEventListener("submit", e => {
 
             e.preventDefault();
 
@@ -114,76 +191,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // ==========================================
-    // POPUP FUNCTION
-    // ==========================================
+});
 
-    const popup = document.getElementById("popup");
+/* ================= LOADER ================= */
 
-    window.showPopup = function (message) {
+window.addEventListener("load", () => {
 
-        if (!popup) return;
-
-        popup.querySelector("span").innerText = message;
-
-        popup.classList.add("show");
-
-        setTimeout(() => {
-
-            popup.classList.remove("show");
-
-        }, 2000);
-
-    }
-
-    // ==========================================
-    // FLASH SALE COUNTDOWN
-    // ==========================================
-
-    const days = document.getElementById("days");
-    const hours = document.getElementById("hours");
-    const minutes = document.getElementById("minutes");
-    const seconds = document.getElementById("seconds");
-
-    if (days) {
-
-        let totalTime = 2 * 24 * 60 * 60;
-
-        setInterval(() => {
-
-            totalTime--;
-
-            let d = Math.floor(totalTime / 86400);
-
-            let h = Math.floor((totalTime % 86400) / 3600);
-
-            let m = Math.floor((totalTime % 3600) / 60);
-
-            let s = totalTime % 60;
-
-            days.innerHTML = String(d).padStart(2, "0");
-
-            hours.innerHTML = String(h).padStart(2, "0");
-
-            minutes.innerHTML = String(m).padStart(2, "0");
-
-            seconds.innerHTML = String(s).padStart(2, "0");
-
-            if (totalTime <= 0) {
-
-                totalTime = 2 * 24 * 60 * 60;
-
-            }
-
-        }, 1000);
-
-    }
+    document.body.classList.add("loaded");
 
 });
 
-// ==========================================
-// SHOPPING CART (NO DATA ATTRIBUTES REQUIRED)
-// ==========================================
+
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -195,7 +213,7 @@ const cartSidebar = document.getElementById("cartSidebar");
 const cartBtn = document.getElementById("cartBtn");
 const closeCart = document.getElementById("closeCart");
 
-// ================= OPEN / CLOSE CART =================
+/* ================= OPEN CART ================= */
 
 if (cartBtn) {
 
@@ -209,6 +227,8 @@ if (cartBtn) {
 
 }
 
+/* ================= CLOSE CART ================= */
+
 if (closeCart) {
 
     closeCart.addEventListener("click", function () {
@@ -219,7 +239,7 @@ if (closeCart) {
 
 }
 
-// ================= ADD TO CART =================
+/* ================= ADD TO CART ================= */
 
 document.querySelectorAll(".cart-btn").forEach(button => {
 
@@ -231,15 +251,20 @@ document.querySelectorAll(".cart-btn").forEach(button => {
 
         const image = card.querySelector("img").src;
 
-        let priceText = card.querySelector(".price").childNodes[0].textContent;
+        const priceText =
+            card.querySelector(".price").childNodes[0].textContent;
 
-        let price = Number(priceText.replace(/[₹,\s]/g, ""));
+        const price =
+            Number(priceText.replace(/[₹,\s]/g, ""));
 
-        let qtyInput = card.querySelector(".quantity input");
+        const qtyInput =
+            card.querySelector(".quantity input");
 
-        let quantity = qtyInput ? Number(qtyInput.value) : 1;
+        const quantity =
+            qtyInput ? Number(qtyInput.value) : 1;
 
-        let exist = cart.find(item => item.name === name);
+        const exist =
+            cart.find(item => item.name === name);
 
         if (exist) {
 
@@ -249,13 +274,13 @@ document.querySelectorAll(".cart-btn").forEach(button => {
 
             cart.push({
 
-                name: name,
+                name,
 
-                price: price,
+                image,
 
-                image: image,
+                price,
 
-                quantity: quantity
+                quantity
 
             });
 
@@ -273,9 +298,12 @@ document.querySelectorAll(".cart-btn").forEach(button => {
 
 });
 
-// ================= UPDATE CART =================
+/* ================= UPDATE CART ================= */
 
 function updateCart() {
+    
+    console.log(cart);
+console.log(cartItems);
 
     if (!cartItems) return;
 
@@ -302,31 +330,31 @@ function updateCart() {
 
 <div class="cart-product">
 
-    <img src="${item.image}" width="70">
+<img src="${item.image}" alt="${item.name}">
 
-    <div class="cart-details">
+<div class="cart-details">
 
-        <h4>${item.name}</h4>
+<h4>${item.name}</h4>
 
-        <p>₹${item.price.toLocaleString()}</p>
+<p>₹${item.price.toLocaleString()}</p>
 
-        <div class="cart-qty">
+<div class="cart-qty">
 
-            <button class="dec" data-index="${index}">-</button>
+<button class="dec" data-index="${index}">-</button>
 
-            <span>${item.quantity}</span>
+<span>${item.quantity}</span>
 
-            <button class="inc" data-index="${index}">+</button>
+<button class="inc" data-index="${index}">+</button>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <button class="remove-item" data-index="${index}">
+<button class="remove-item" data-index="${index}">
 
-        <i class="fa-solid fa-trash"></i>
+<i class="fa-solid fa-trash"></i>
 
-    </button>
+</button>
 
 </div>
 
@@ -334,17 +362,32 @@ function updateCart() {
 
     });
 
-    cartTotal.innerText = total.toLocaleString();
+    if (cartTotal) {
 
-    cartCount.innerText = count;
+        cartTotal.innerText =
+            total.toLocaleString();
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    if (cartCount) {
+
+        cartCount.innerText = count;
+
+    }
+
+    localStorage.setItem(
+
+        "cart",
+
+        JSON.stringify(cart)
+
+    );
 
     cartEvents();
 
 }
 
-// ================= CART BUTTON EVENTS =================
+/* ================= CART EVENTS ================= */
 
 function cartEvents() {
 
@@ -398,17 +441,12 @@ function cartEvents() {
 
 }
 
-// ================= LOAD SAVED CART =================
+/* ================= LOAD CART ================= */
 
 updateCart();
 
-// ==========================================
-// SHOPINDIA JAVASCRIPT PART - 3
-// ==========================================
 
-// ===============================
-// PRODUCT QUANTITY (+ / -)
-// ===============================
+/* ================= PRODUCT QUANTITY ================= */
 
 document.querySelectorAll(".product-card").forEach(card => {
 
@@ -438,86 +476,7 @@ document.querySelectorAll(".product-card").forEach(card => {
 
 });
 
-// ===============================
-// BUY NOW → WHATSAPP
-// ===============================
-
-document.querySelectorAll(".buy-btn").forEach(button => {
-
-    button.addEventListener("click", function () {
-
-        const card = this.closest(".product-card");
-
-        const name = card.querySelector("h3").innerText;
-
-        const price = card.querySelector(".price").childNodes[0].textContent.trim();
-
-        let qty = 1;
-
-        const qtyInput = card.querySelector(".quantity input");
-
-        if (qtyInput) {
-
-            qty = qtyInput.value;
-
-        }
-
-        const message =
-`Hello ShopIndia,
-
-I want to buy:
-
-📦 Product : ${name}
-💰 Price : ${price}
-🔢 Quantity : ${qty}
-
-Please share payment details.`;
-
-        window.open(
-            `https://wa.me/918000747574?text=${encodeURIComponent(message)}`,
-            "_blank"
-        );
-
-    });
-
-});
-
-// ===============================
-// SEARCH PRODUCTS
-// ===============================
-
-const searchInput = document.querySelector(".search-box input");
-
-if (searchInput) {
-
-    searchInput.addEventListener("keyup", function () {
-
-        const value = this.value.toLowerCase();
-
-        document.querySelectorAll(".product-card").forEach(card => {
-
-            const product =
-                card.querySelector("h3").innerText.toLowerCase();
-
-            if (product.includes(value)) {
-
-                card.style.display = "block";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-}
-
-// ===============================
-// WISHLIST
-// ===============================
+/* ================= WISHLIST ================= */
 
 document.querySelectorAll(".wishlist-btn").forEach(btn => {
 
@@ -533,7 +492,9 @@ document.querySelectorAll(".wishlist-btn").forEach(btn => {
             icon.classList.add("fa-solid");
 
             if (typeof showPopup === "function") {
-                showPopup("❤️ Added to Wishlist");
+
+                showPopup("❤️ Added To Wishlist");
+
             }
 
         } else {
@@ -542,7 +503,9 @@ document.querySelectorAll(".wishlist-btn").forEach(btn => {
             icon.classList.add("fa-regular");
 
             if (typeof showPopup === "function") {
-                showPopup("💔 Removed from Wishlist");
+
+                showPopup("💔 Removed From Wishlist");
+
             }
 
         }
@@ -551,76 +514,66 @@ document.querySelectorAll(".wishlist-btn").forEach(btn => {
 
 });
 
-// ===============================
-// SMOOTH SCROLL
-// ===============================
+/* ================= FLASH SALE COUNTDOWN ================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
 
-    anchor.addEventListener("click", function (e) {
+if (days && hours && minutes && seconds) {
 
-        const target = document.querySelector(this.getAttribute("href"));
+    let totalTime = 2 * 24 * 60 * 60;
 
-        if (target) {
+    setInterval(() => {
 
-            e.preventDefault();
+        totalTime--;
 
-            target.scrollIntoView({
+        if (totalTime <= 0) {
 
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-// ===============================
-// CHECKOUT BUTTON
-// ===============================
-
-const checkoutBtn = document.querySelector(".checkout-btn");
-
-if (checkoutBtn) {
-
-    checkoutBtn.addEventListener("click", () => {
-
-        if (cart.length === 0) {
-
-            alert("Your cart is empty!");
-
-            return;
+            totalTime = 2 * 24 * 60 * 60;
 
         }
 
-        let total = 0;
-        let order = "";
+        const d = Math.floor(totalTime / 86400);
+        const h = Math.floor((totalTime % 86400) / 3600);
+        const m = Math.floor((totalTime % 3600) / 60);
+        const s = totalTime % 60;
 
-        cart.forEach(item => {
+        days.innerText = String(d).padStart(2, "0");
+        hours.innerText = String(h).padStart(2, "0");
+        minutes.innerText = String(m).padStart(2, "0");
+        seconds.innerText = String(s).padStart(2, "0");
 
-            total += item.price * item.quantity;
+    }, 1000);
 
-            order +=
-`• ${item.name}
-Qty : ${item.quantity}
-Price : ₹${item.price}
+}
 
-`;
+/* ================= BUY NOW ================= */
 
-        });
+document.querySelectorAll(".buy-btn").forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const card = this.closest(".product-card");
+
+        const name = card.querySelector("h3").innerText;
+        const price = card.querySelector(".price").childNodes[0].textContent.trim();
+
+        const qtyInput = card.querySelector(".quantity input");
+        const qty = qtyInput ? qtyInput.value : 1;
 
         const message =
+
 `Hello ShopIndia,
 
-I want to place this order:
+I want to buy:
 
-${order}
+📦 Product : ${name}
+💰 Price : ${price}
+🔢 Quantity : ${qty}
 
-Total Amount : ₹${total}
-
-Please confirm my order.`;
+Please share payment details.`;
 
         window.open(
 
@@ -632,18 +585,353 @@ Please confirm my order.`;
 
     });
 
+});
+
+/* ================= CHECKOUT ================= */
+
+/* ================= ORDER PLACE ================= */
+
+const checkoutBtn = document.getElementById("checkoutBtn");
+const checkoutForm = document.getElementById("checkoutForm");
+
+if (checkoutBtn && checkoutForm) {
+
+    checkoutBtn.addEventListener("click", () => {
+
+        checkoutForm.style.display = "block";
+        checkoutBtn.style.display = "none";
+
+    });
+
 }
 
-// ===============================
-// PAGE LOADER
-// ===============================
+const placeOrderBtn = document.getElementById("placeOrderBtn");
+
+function updateBill() {
+
+    let itemsTotal = 0;
+
+    cart.forEach(item => {
+        itemsTotal += item.price * item.quantity;
+    });
+
+    const delivery = cart.length > 0 ? 99 : 0;
+    const gst = Math.round(itemsTotal * 0.18);
+    const grandTotal = itemsTotal + delivery + gst;
+
+    document.getElementById("cartTotal").innerText =
+        itemsTotal.toLocaleString();
+
+    document.getElementById("deliveryCharge").innerText =
+        "₹" + delivery;
+
+    document.getElementById("gstAmount").innerText =
+        "₹" + gst.toLocaleString();
+
+    document.getElementById("grandTotal").innerText =
+        grandTotal.toLocaleString();
+
+    return {
+        itemsTotal,
+        delivery,
+        gst,
+        grandTotal
+    };
+}
+
+/* update bill whenever cart changes */
+const oldUpdateCart = updateCart;
+
+updateCart = function () {
+    oldUpdateCart();
+    updateBill();
+};
+
+updateBill();
+
+/* ================= PLACE ORDER ================= */
+
+if (placeOrderBtn) {
+
+    placeOrderBtn.addEventListener("click", () => {
+
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        const name =
+            document.getElementById("customerName").value.trim();
+
+        const mobile =
+            document.getElementById("customerMobile").value.trim();
+
+        const email =
+            document.getElementById("customerEmail").value.trim();
+
+        const address =
+            document.getElementById("customerAddress").value.trim();
+
+        const city =
+            document.getElementById("customerCity").value.trim();
+
+        const state =
+            document.getElementById("customerState").value.trim();
+
+        const pincode =
+            document.getElementById("customerPincode").value.trim();
+
+        if (
+            !name ||
+            !mobile ||
+            !address ||
+            !city ||
+            !state ||
+            !pincode
+        ) {
+            alert("Please fill all required fields.");
+            return;
+        }
+
+        if (!/^[6-9]\d{9}$/.test(mobile)) {
+            alert("Enter a valid 10 digit mobile number.");
+            return;
+        }
+
+        if (!/^\d{6}$/.test(pincode)) {
+            alert("Enter a valid 6 digit pincode.");
+            return;
+        }
+
+        const bill = updateBill();
+
+        let products = "";
+
+        cart.forEach((item, index) => {
+
+            products +=
+`${index + 1}. ${item.name}
+Qty : ${item.quantity}
+Price : ₹${item.price}
+
+`;
+
+        });
+
+        const orderId =
+            "ORD" + Date.now();
+
+        const message = `🛒 *NEW ORDER*
+
+Order ID : ${orderId}
+
+👤 Customer Details
+
+Name : ${name}
+
+Mobile : ${mobile}
+
+Email : ${email || "Not Provided"}
+
+Address :
+${address}
+
+City : ${city}
+
+State : ${state}
+
+Pincode : ${pincode}
+
+━━━━━━━━━━━━━━
+
+🛍 Products
+
+${products}
+
+━━━━━━━━━━━━━━
+
+Items Total : ₹${bill.itemsTotal}
+
+Delivery : ₹${bill.delivery}
+
+GST : ₹${bill.gst}
+
+Grand Total : ₹${bill.grandTotal}
+
+Thank You ❤️`;
+
+        window.open(
+            `https://wa.me/918000747574?text=${encodeURIComponent(message)}`,
+            "_blank"
+        );
+
+        cart = [];
+        localStorage.removeItem("cart");
+        updateCart();
+
+        document.getElementById("customerName").value = "";
+        document.getElementById("customerMobile").value = "";
+        document.getElementById("customerEmail").value = "";
+        document.getElementById("customerAddress").value = "";
+        document.getElementById("customerCity").value = "";
+        document.getElementById("customerState").value = "";
+        document.getElementById("customerPincode").value = "";
+
+        if (typeof showPopup === "function") {
+            showPopup("✅ Order Placed Successfully");
+        } else {
+            alert("Order Placed Successfully");
+        }
+
+    });
+
+}
+
+/* ================= POPUP FUNCTION ================= */
+
+const popup = document.getElementById("popup");
+
+function showPopup(message) {
+
+    if (!popup) return;
+
+    const text = popup.querySelector("span");
+
+    if (text) {
+        text.innerText = message;
+    }
+
+    popup.classList.add("show");
+
+    clearTimeout(window.popupTimer);
+
+    window.popupTimer = setTimeout(() => {
+
+        popup.classList.remove("show");
+
+    }, 2000);
+
+}
+
+/* Global Function */
+
+window.showPopup = showPopup;
+
+/* ================= HIDE CART ON OUTSIDE CLICK ================= */
+
+document.addEventListener("click", function (e) {
+
+    if (!cartSidebar) return;
+
+    const clickedInsideCart = cartSidebar.contains(e.target);
+
+    const clickedCartBtn =
+        cartBtn && cartBtn.contains(e.target);
+
+    if (
+
+        cartSidebar.classList.contains("active") &&
+
+        !clickedInsideCart &&
+
+        !clickedCartBtn
+
+    ) {
+
+        cartSidebar.classList.remove("active");
+
+    }
+
+});
+
+/* ================= ESC KEY CLOSE CART ================= */
+
+document.addEventListener("keydown", function (e) {
+
+    if (
+
+        e.key === "Escape" &&
+
+        cartSidebar &&
+
+        cartSidebar.classList.contains("active")
+
+    ) {
+
+        cartSidebar.classList.remove("active");
+
+    }
+
+});
+
+/* ================= IMAGE FALLBACK ================= */
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.onerror = function () {
+
+        this.src =
+            "https://via.placeholder.com/400x400?text=No+Image";
+
+    };
+
+});
+
+/* ================= BUTTON RIPPLE EFFECT ================= */
+
+document.querySelectorAll(
+
+".cart-btn,.buy-btn,.checkout-btn,.btn"
+
+).forEach(button => {
+
+    button.addEventListener("click", function (e) {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        const rect = this.getBoundingClientRect();
+
+        ripple.style.left =
+            (e.clientX - rect.left) + "px";
+
+        ripple.style.top =
+            (e.clientY - rect.top) + "px";
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+
+            ripple.remove();
+
+        }, 600);
+
+    });
+
+});
+
+/* ================= PAGE LOADED ================= */
 
 window.addEventListener("load", () => {
 
     document.body.classList.add("loaded");
 
+    console.log("✅ ShopIndia Loaded Successfully");
+
 });
 
-// ==========================================
-// END OF SCRIPT
-// ==========================================
+/* ================= DEBUG CHECK ================= */
+
+console.log("✅ Navbar Loaded");
+
+console.log("✅ Products Loaded");
+
+console.log("✅ Cart Loaded");
+
+console.log("✅ Wishlist Loaded");
+
+console.log("✅ Countdown Running");
+
+console.log("✅ ShopIndia Ready");
+

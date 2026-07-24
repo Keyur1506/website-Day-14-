@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,59 +18,92 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
 
-    <header>
+    <header class="header">
 
         <nav class="navbar">
 
             <!-- Logo -->
             <div class="logo">
-                <a href="#">
+
+                <a href="#home">
+
                     <i class="fa-solid fa-cart-shopping"></i>
-                    ShopIndia
+
+                    <span>ShopIndia</span>
+
                 </a>
+
             </div>
 
             <!-- Search -->
+
             <div class="search-box">
 
-                <input type="text" placeholder="Search products...">
+                <input
+                    type="text"
+                    placeholder="Search Products...">
 
                 <button>
+
                     <i class="fa-solid fa-search"></i>
+
                 </button>
+
+            </div>
+
+            <!-- Mobile Menu -->
+
+            <div class="menu-toggle" id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
 
             </div>
 
             <!-- Navigation -->
 
-            <div class="menuToggle" id="menuToggle">
-    <i class="fa-solid fa-bars"></i>
-</div>
+            <ul class="nav-links" id="navLinks">
 
+                <li><a href="#home">Home</a></li>
 
-<ul class="nav-links" id="navLinks">
+                <li><a href="#categories">Categories</a></li>
 
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Shop</a></li>
-    <li><a href="#">Categories</a></li>
-    <li><a href="#">Contact</a></li>
+                <li><a href="#products">Products</a></li>
 
-</ul>
+                <li><a href="#offers">Offers</a></li>
+
+                <li><a href="#reviews">Reviews</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
             <!-- Right Icons -->
 
-           <!-- Right Icons -->
+            <div class="nav-icons">
 
-<div class="nav-icons">
-    
-    ...
-    
-</div>
+                <a href="#">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </a>
+
+                <a href="#" id="cartBtn">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span id="cartCount">0</span>
+
+                </a>
+
+            </div>
+
         </nav>
 
     </header>
@@ -78,17 +112,17 @@
 
     <section class="hero" id="home">
 
-        <!-- Left -->
-
         <div class="hero-left">
 
             <span class="hero-badge">
+
                 🔥 Mega Sale 2026
+
             </span>
 
             <h1>
 
-                Discover the Best <br>
+                Discover The Best <br>
 
                 Electronics Online
 
@@ -96,35 +130,27 @@
 
             <p>
 
-                Buy premium smartphones, laptops, smart watches,
-
-                headphones and gaming accessories at unbeatable prices.
-
-                Fast delivery, secure payment and genuine products.
+                Buy premium smartphones, laptops,
+                smartwatches, headphones and gaming
+                accessories at the best prices in India.
 
             </p>
 
             <div class="hero-buttons">
 
-                <a href="https://wa.me/918000747574?text=I%20want%20to%20buy%20a%20product%20from%20ShopIndia"
-                    target="_blank"
-                    class="btn">
-
-                    <i class="fab fa-whatsapp"></i>
+                <a href="#products" class="btn">
 
                     Shop Now
 
                 </a>
 
-                <a href="#products" class="btn-outline">
+                <a href="#categories" class="btn-outline">
 
-                    Explore Products
+                    Explore
 
                 </a>
 
             </div>
-
-            <!-- Features -->
 
             <div class="hero-features">
 
@@ -164,18 +190,9 @@
 
         </div>
 
-        <!-- Right -->
-
         <div class="hero-right">
 
-            <div class="hero-image">
-
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=900"
-                    alt="Headphone">
-
-            </div>
-
-            <!-- Discount -->
+            <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800&auto=format&fit=crop" alt="Hero Image">
 
             <div class="discount-circle">
 
@@ -191,875 +208,652 @@
 
     <!-- ================= FEATURES ================= -->
 
-<section class="features">
+    <section class="features">
 
-    <div class="feature-card">
-        <i class="fa-solid fa-truck-fast"></i>
-        <h3>Free Shipping</h3>
-        <p>Free delivery on orders above ₹999 across India.</p>
-    </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Free Shipping</h3>
+            <p>Free delivery on orders above ₹999 across India.</p>
+        </div>
 
-    <div class="feature-card">
-        <i class="fa-solid fa-credit-card"></i>
-        <h3>Secure Payment</h3>
-        <p>100% secure payment with trusted gateways.</p>
-    </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-credit-card"></i>
+            <h3>Secure Payment</h3>
+            <p>100% Secure Payment with trusted gateways.</p>
+        </div>
 
-    <div class="feature-card">
-        <i class="fa-solid fa-rotate-left"></i>
-        <h3>Easy Returns</h3>
-        <p>7 Days replacement policy on selected products.</p>
-    </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-rotate-left"></i>
+            <h3>Easy Return</h3>
+            <p>7 Days Easy Replacement Policy.</p>
+        </div>
 
-    <div class="feature-card">
-        <i class="fa-solid fa-headset"></i>
-        <h3>24×7 Support</h3>
-        <p>Our team is always available for customer support.</p>
-    </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>24×7 Support</h3>
+            <p>Dedicated customer support anytime.</p>
+        </div>
 
-</section>
+    </section>
 
-<!-- ================= CATEGORIES ================= -->
+    <!-- ================= CATEGORIES ================= -->
 
-<section class="categories" id="categories">
+    <section class="categories" id="categories">
 
-    <div class="section-title">
+        <div class="section-title">
 
-        <span>Top Categories</span>
+            <span>Top Categories</span>
 
-        <h2>Shop By Category</h2>
+            <h2>Shop By Category</h2>
 
-        <p>Explore premium electronics from top brands.</p>
-
-    </div>
-
-    <div class="category-grid">
-
-        <div class="category-card">
-
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
-                alt="Mobile">
-
-            <h3>Smartphones</h3>
-
-            <p>120+ Products</p>
+            <p>Explore our premium electronics collection.</p>
 
         </div>
 
-        <div class="category-card">
+        <div class="category-grid">
 
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
-                alt="Laptop">
+            <div class="category-card">
 
-            <h3>Laptops</h3>
+             <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop" alt="Mobile">
 
-            <p>80+ Products</p>
+                <h3>Smartphones</h3>
+
+                <p>120+ Products</p>
+
+            </div>
+
+            <div class="category-card">
+
+               <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&auto=format&fit=crop" alt="Laptop">
+
+                <h3>Laptops</h3>
+
+                <p>80+ Products</p>
+
+            </div>
+
+            <div class="category-card">
+
+               <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop" alt="Watch">
+
+                <h3>Smart Watches</h3>
+
+                <p>70+ Products</p>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Headphones">
+
+                <h3>Headphones</h3>
+
+                <p>95+ Products</p>
+
+            </div>
 
         </div>
 
-        <div class="category-card">
+    </section>
 
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
-                alt="Watch">
+    <!-- ================= FLASH SALE ================= -->
 
-            <h3>Smart Watches</h3>
+    <section class="flash-sale" id="offers">
 
-            <p>70+ Products</p>
+        <div class="flash-left">
+
+            <span class="sale-tag">
+
+                ⚡ Flash Sale
+
+            </span>
+
+            <h2>
+
+                Hurry! Mega Sale Ends Soon
+
+            </h2>
+
+            <p>
+
+                Grab the biggest discounts on premium electronics.
+
+            </p>
+
+            <div class="countdown">
+
+                <div>
+
+                    <h3 id="days">02</h3>
+
+                    <span>Days</span>
+
+                </div>
+
+                <div>
+
+                    <h3 id="hours">12</h3>
+
+                    <span>Hours</span>
+
+                </div>
+
+                <div>
+
+                    <h3 id="minutes">45</h3>
+
+                    <span>Minutes</span>
+
+                </div>
+
+                <div>
+
+                    <h3 id="seconds">30</h3>
+
+                    <span>Seconds</span>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="category-card">
+        <div class="flash-right">
 
-            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600"
-                alt="Headphone">
-
-            <h3>Headphones</h3>
-
-            <p>95+ Products</p>
+         <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700&auto=format&fit=crop" alt="Flash Sale">   
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- ================= PRODUCTS START ================= -->
 
-<!-- ================= TODAY'S OFFER ================= -->
+    <section class="products" id="products">
 
-<section class="offer-banner" id="offers">
+        <div class="section-title">
 
-    <div class="offer-left">
+            <span>Featured Collection</span>
 
-        <span class="offer-tag">
-            🔥 Limited Time Offer
-        </span>
+            <h2>Our Premium Products</h2>
 
-        <h2>
+            <p>Choose from our best-selling electronics.</p>
 
-            Mega Electronics Sale
+        </div>
 
-        </h2>
+        <div class="product-grid">
 
-        <p>
 
-            Get up to <strong>70% OFF</strong> on Smartphones,
-            Laptops, Smart Watches and Accessories.
+<!-- ================= PRODUCT 1 ================= -->
 
-            Hurry! Offer ends soon.
+<div class="product-card">
 
-        </p>
+    <span class="badge">15% OFF</span>
 
-        <a href="#products" class="btn">
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
 
-            Shop Deals
+<img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&auto=format&fit=crop" alt="iPhone">
 
-        </a>
+    <div class="product-info">
 
-    </div>
+        <h3>iPhone 16 Pro Max</h3>
 
-    <div class="offer-right">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=900"
-            alt="Offer Product">
+        <div class="stock">✅ In Stock</div>
 
-    </div>
+        <div class="price">
 
-</section>
+            ₹1,29,999
 
-<!-- ================= WEBSITE STATS ================= -->
+            <span>₹1,49,999</span>
 
-<section class="stats">
+        </div>
 
-    <div class="stat-card">
+        <div class="quantity">
 
-        <h2>10K+</h2>
+            <button class="minus">-</button>
 
-        <p>Happy Customers</p>
+            <input type="number" value="1" min="1">
 
-    </div>
+            <button class="plus">+</button>
 
-    <div class="stat-card">
+        </div>
 
-        <h2>500+</h2>
+        <div class="product-buttons">
 
-        <p>Premium Products</p>
+            <button class="cart-btn">
 
-    </div>
+                <i class="fa-solid fa-cart-shopping"></i>
 
-    <div class="stat-card">
+                Add To Cart
 
-        <h2>150+</h2>
-
-        <p>Top Brands</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <h2>4.9★</h2>
-
-        <p>Customer Rating</p>
-
-    </div>
-
-</section>
-
-<!-- ================= PRODUCTS ================= -->
-
-<section class="products" id="products">
-
-    <div class="section-title">
-        <span>Our Collection</span>
-        <h2>Featured Products</h2>
-        <p>Choose your favourite premium electronics.</p>
-    </div>
-
-    <div class="product-grid">
-
-        <!-- Product 1 -->
-        <div class="product-card">
-
-            <span class="badge">20% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
             </button>
 
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700"
-                alt="Samsung">
+            <button class="buy-btn">
 
-            <div class="product-info">
+                Buy Now
 
-                <h3>Samsung Galaxy S24 Ultra</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="stock">
-                    ✅ In Stock
-                </div>
-
-                <div class="price">
-                    ₹94,999
-                    <span>₹1,19,999</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Add To Cart
-                    </button>
-
-                    <a class="buy-btn"
-                        target="_blank"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Samsung%20Galaxy%20S24%20Ultra">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Product 2 -->
-
-        <div class="product-card">
-
-            <span class="badge">15% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
             </button>
 
-            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=700"
-                alt="iPhone">
-
-            <div class="product-info">
-
-                <h3>iPhone 16 Pro Max</h3>
-
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-
-                <div class="stock">✅ In Stock</div>
-
-                <div class="price">
-                    ₹1,29,999
-                    <span>₹1,49,999</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-                        Add To Cart
-                    </button>
-
-                    <a target="_blank"
-                        class="buy-btn"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20iPhone%2016%20Pro%20Max">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
         </div>
-
-        <!-- Product 3 -->
-
-        <div class="product-card">
-
-            <span class="badge">18% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700"
-                alt="Laptop">
-
-            <div class="product-info">
-
-                <h3>Dell Inspiron Laptop</h3>
-
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-
-                <div class="stock">Only 5 Left</div>
-
-                <div class="price">
-                    ₹59,999
-                    <span>₹72,999</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-                        Add To Cart
-                    </button>
-
-                    <a target="_blank"
-                        class="buy-btn"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Dell%20Inspiron%20Laptop">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Product 4 -->
-
-        <div class="product-card">
-
-            <span class="badge">25% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700"
-                alt="Watch">
-
-            <div class="product-info">
-
-                <h3>Apple Watch Series 10</h3>
-
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-
-                <div class="stock">✅ In Stock</div>
-
-                <div class="price">
-                    ₹32,999
-                    <span>₹42,999</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-                        Add To Cart
-                    </button>
-
-                    <a target="_blank"
-                        class="buy-btn"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Apple%20Watch">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Product 5 -->
-
-        <div class="product-card">
-            <span class="badge">30% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=700"
-                alt="Headphones">
-
-            <div class="product-info">
-
-                <h3>Sony WH-1000XM5</h3>
-
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-
-                <div class="stock">✅ In Stock</div>
-
-                <div class="price">
-                    ₹22,999
-                    <span>₹29,999</span>
-                </div>
-
-                <div class="quantity">
-                    <button class="minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="plus">+</button>
-                </div>
-
-                <div class="product-buttons">
-                    <button class="cart-btn">Add To Cart</button>
-                    <a target="_blank"
-                        class="buy-btn"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Sony%20WH1000XM5">
-                        Buy Now
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Product 6 -->
-
-        <div class="product-card">
-
-            <span class="badge">35% OFF</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?w=700"
-                alt="Speaker">
-
-            <div class="product-info">
-
-                <h3>JBL Bluetooth Speaker</h3>
-
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-
-                <div class="stock">Only 3 Left</div>
-
-                <div class="price">
-                    ₹5,999
-                    <span>₹8,999</span>
-                </div>
-
-                <div class="quantity">
-                    <button class="minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="plus">+</button>
-                </div>
-
-                <div class="product-buttons">
-                    <button class="cart-btn">Add To Cart</button>
-                    <a target="_blank"
-                        class="buy-btn"
-                        href="https://wa.me/918000747574?text=I%20want%20to%20buy%20JBL%20Bluetooth%20Speaker">
-                        Buy Now
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= MORE PRODUCTS ================= -->
-
-<section class="products">
-
-    <div class="product-grid">
-
-        <!-- Product 7 -->
-
-        <div class="product-card">
-
-            <span class="badge">New</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=700"
-                alt="Keyboard">
-
-            <div class="product-info">
-
-                <h3>Logitech RGB Mechanical Keyboard</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="stock">
-                    ✅ In Stock
-                </div>
-
-                <div class="price">
-                    ₹8,999
-                    <span>₹11,999</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                        Add To Cart
-
-                    </button>
-
-                    <a href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Logitech%20RGB%20Mechanical%20Keyboard"
-                        target="_blank"
-                        class="buy-btn">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Product 8 -->
-
-        <div class="product-card">
-
-            <span class="badge">Best Seller</span>
-
-            <button class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=700"
-                alt="Gaming Mouse">
-
-            <div class="product-info">
-
-                <h3>Gaming RGB Mouse</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="stock">
-                    Only 4 Left
-                </div>
-
-                <div class="price">
-                    ₹2,499
-                    <span>₹3,499</span>
-                </div>
-
-                <div class="quantity">
-
-                    <button class="minus">-</button>
-
-                    <input type="number" value="1" min="1">
-
-                    <button class="plus">+</button>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button class="cart-btn">
-
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                        Add To Cart
-
-                    </button>
-
-                    <a href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Gaming%20RGB%20Mouse"
-                        target="_blank"
-                        class="buy-btn">
-
-                        Buy Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= FLASH SALE ================= -->
-
-<section class="flash-sale">
-
-    <div class="flash-left">
-
-        <span class="sale-tag">
-            ⚡ Flash Sale
-        </span>
-
-        <h2>Hurry! Mega Sale Ends Soon</h2>
-
-        <p>
-
-            Grab the best electronics deals before the offer expires.
-
-        </p>
-
-        <div class="countdown">
-
-            <div>
-
-                <h3 id="days">02</h3>
-
-                <span>Days</span>
-
-            </div>
-
-            <div>
-
-                <h3 id="hours">12</h3>
-
-                <span>Hours</span>
-
-            </div>
-
-            <div>
-
-                <h3 id="minutes">45</h3>
-
-                <span>Minutes</span>
-
-            </div>
-
-            <div>
-
-                <h3 id="seconds">30</h3>
-
-                <span>Seconds</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="flash-right">
-
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900"
-            alt="Flash Sale">
-
-    </div>
-
-</section>
-
-<!-- ================= DEAL OF THE DAY ================= -->
-
-<section class="deal-section" id="offers">
-
-    <div class="deal-left">
-
-        <span class="deal-tag">
-
-            🔥 Deal Of The Day
-
-        </span>
-
-        <h2>
-
-            Samsung Galaxy S24 Ultra
-
-        </h2>
-
-        <p>
-
-            AI Camera, 200MP, Snapdragon Processor,
-
-            12GB RAM, Premium Titanium Design.
-
-        </p>
-
-        <div class="deal-price">
-
-            <h3>₹94,999</h3>
-
-            <span>₹1,19,999</span>
-
-        </div>
-
-        <a href="https://wa.me/918000747574?text=I%20want%20to%20buy%20Samsung%20Galaxy%20S24%20Ultra"
-            target="_blank"
-            class="btn">
-
-            Buy Now
-
-        </a>
-
-    </div>
-
-    <div class="deal-right">
-
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900"
-            alt="Samsung">
-
-    </div>
-
-</section>
-
-<!-- ================= TOP BRANDS ================= -->
-
-<section class="brands">
-
-    <div class="section-title">
-
-        <span>Popular Brands</span>
-
-        <h2>Top Electronics Brands</h2>
-
-        <p>Choose products from trusted brands.</p>
-
-    </div>
-
-    <div class="brand-grid">
-
-        <div class="brand-card">
-
-            <i class="fa-brands fa-apple"></i>
-
-            <h3>Apple</h3>
-
-        </div>
-
-        <div class="brand-card">
-
-            <i class="fa-solid fa-mobile-screen-button"></i>
-
-            <h3>Samsung</h3>
-
-        </div>
-
-        <div class="brand-card">
-
-            <i class="fa-solid fa-laptop"></i>
-
-            <h3>Dell</h3>
-
-        </div>
-
-        <div class="brand-card">
-
-            <i class="fa-solid fa-headphones"></i>
-
-            <h3>Sony</h3>
-
-        </div>
-
-        <div class="brand-card">
-
-            <i class="fa-solid fa-keyboard"></i>
-
-            <h3>Logitech</h3>
-
-        </div>
-
-        <div class="brand-card">
-
-            <i class="fa-solid fa-volume-high"></i>
-
-            <h3>JBL</h3>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= CART SIDEBAR ================= -->
-
-<div class="cart-sidebar" id="cartSidebar">
-
-    <div class="cart-header">
-
-        <h2>
-            <i class="fa-solid fa-cart-shopping"></i>
-            Shopping Cart
-        </h2>
-
-        <button id="closeCart">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-    </div>
-
-    <div class="cart-items" id="cartItems">
-
-        <p class="empty-cart">
-            Your cart is empty.
-        </p>
-
-    </div>
-
-    <div class="cart-footer">
-
-        <h3>
-            Total :
-            ₹ <span id="cartTotal">0</span>
-        </h3>
-
-        <button class="checkout-btn">
-
-            Checkout
-
-        </button>
 
     </div>
 
 </div>
+
+<!-- ================= PRODUCT 2 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">18% OFF</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&auto=format&fit=crop" alt="Laptop">
+
+    <div class="product-info">
+
+        <h3>HP Victus Gaming Laptop</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">Only 5 Left</div>
+
+        <div class="price">
+
+            ₹59,999
+
+            <span>₹72,999</span>
+
+        </div>
+
+        <div class="quantity">
+
+            <button class="minus">-</button>
+
+            <input type="number" value="1" min="1">
+
+            <button class="plus">+</button>
+
+        </div>
+
+        <div class="product-buttons">
+
+            <button class="cart-btn">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add To Cart
+
+            </button>
+
+            <button class="buy-btn">
+
+                Buy Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 3 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">25% OFF</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop" alt="Watch">
+
+    <div class="product-info">
+
+        <h3>Apple Watch Series 10</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">✅ In Stock</div>
+
+        <div class="price">
+
+            ₹32,999
+
+            <span>₹42,999</span>
+
+        </div>
+
+        <div class="quantity">
+
+            <button class="minus">-</button>
+
+            <input type="number" value="1" min="1">
+
+            <button class="plus">+</button>
+
+        </div>
+
+        <div class="product-buttons">
+
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 4 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">30% OFF</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Headphones">
+
+    <div class="product-info">
+
+        <h3>Sony WH-1000XM5 Headphones</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">✅ In Stock</div>
+
+        <div class="price">
+
+            ₹22,999
+
+            <span>₹29,999</span>
+
+        </div>
+
+        <div class="quantity">
+
+            <button class="minus">-</button>
+
+            <input type="number" value="1" min="1">
+
+            <button class="plus">+</button>
+
+        </div>
+
+        <div class="product-buttons">
+
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 5 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">35% OFF</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?w=500&auto=format&fit=crop" alt="Speaker">
+
+    <div class="product-info">
+
+        <h3>JBL Bluetooth Speaker</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">Only 3 Left</div>
+
+        <div class="price">
+
+            ₹5,999
+
+            <span>₹8,999</span>
+
+        </div>
+
+        <div class="quantity">
+
+            <button class="minus">-</button>
+
+            <input type="number" value="1" min="1">
+
+            <button class="plus">+</button>
+
+        </div>
+
+        <div class="product-buttons">
+
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 6 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">NEW</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500&auto=format&fit=crop" alt="Keyboard">
+
+    <div class="product-info">
+
+        <h3>Logitech RGB Mechanical Keyboard</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">✅ In Stock</div>
+
+        <div class="price">
+            ₹8,999
+            <span>₹11,999</span>
+        </div>
+
+        <div class="quantity">
+            <button class="minus">-</button>
+            <input type="number" value="1" min="1">
+            <button class="plus">+</button>
+        </div>
+
+        <div class="product-buttons">
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 7 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">BEST SELLER</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&auto=format&fit=crop" alt="Mouse">
+
+    <div class="product-info">
+
+        <h3>Gaming RGB Mouse</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">Only 4 Left</div>
+
+        <div class="price">
+            ₹2,499
+            <span>₹3,499</span>
+        </div>
+
+        <div class="quantity">
+            <button class="minus">-</button>
+            <input type="number" value="1" min="1">
+            <button class="plus">+</button>
+        </div>
+
+        <div class="product-buttons">
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 8 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">40% OFF</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=500&auto=format&fit=crop" alt="Earbuds">
+
+    <div class="product-info">
+
+        <h3>Boat Airdopes 311 Pro</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">✅ In Stock</div>
+
+        <div class="price">
+            ₹1,999
+            <span>₹3,499</span>
+        </div>
+
+        <div class="quantity">
+            <button class="minus">-</button>
+            <input type="number" value="1" min="1">
+            <button class="plus">+</button>
+        </div>
+
+        <div class="product-buttons">
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 9 ================= -->
+
+<div class="product-card">
+
+    <span class="badge">NEW</span>
+
+    <button class="wishlist-btn">
+        <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format&fit=crop" alt="Smart Watch">
+
+    <div class="product-info">
+
+        <h3>Noise ColorFit Ultra 3</h3>
+
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+
+        <div class="stock">✅ In Stock</div>
+
+        <div class="price">
+            ₹4,999
+            <span>₹6,999</span>
+        </div>
+
+        <div class="quantity">
+            <button class="minus">-</button>
+            <input type="number" value="1" min="1">
+            <button class="plus">+</button>
+        </div>
+
+        <div class="product-buttons">
+            <button class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+            <button class="buy-btn">
+                Buy Now
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+    </section>
 
 <!-- ================= CUSTOMER REVIEWS ================= -->
 
@@ -1079,54 +873,42 @@
 
         <div class="review-card">
 
-            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
 
             <h3>Rahul Sharma</h3>
 
             <div class="stars">⭐⭐⭐⭐⭐</div>
 
             <p>
-
-                Excellent shopping experience.
-
-                Delivery was very fast and product quality is amazing.
-
+                Excellent shopping experience. Delivery was very fast and the product quality is amazing.
             </p>
 
         </div>
 
         <div class="review-card">
 
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
 
             <h3>Priya Patel</h3>
 
             <div class="stars">⭐⭐⭐⭐⭐</div>
 
             <p>
-
-                Original products and best customer support.
-
-                Highly Recommended.
-
+                Genuine products and excellent customer support. Highly recommended.
             </p>
 
         </div>
 
         <div class="review-card">
 
-            <img src="https://randomuser.me/api/portraits/men/51.jpg">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Customer">
 
             <h3>Aman Verma</h3>
 
             <div class="stars">⭐⭐⭐⭐⭐</div>
 
             <p>
-
-                Great discounts and genuine electronics.
-
-                Will definitely shop again.
-
+                Great discounts and premium quality electronics. Will definitely shop again.
             </p>
 
         </div>
@@ -1139,17 +921,13 @@
 
 <section class="newsletter">
 
-    <div class="newsletter-box">
+    <div class="newsletter-content">
 
-        <h2>
-
-            Subscribe Our Newsletter
-
-        </h2>
+        <h2>Subscribe Our Newsletter</h2>
 
         <p>
 
-            Get latest offers and discount coupons directly in your inbox.
+            Get latest offers, discounts and new product updates directly in your inbox.
 
         </p>
 
@@ -1157,10 +935,10 @@
 
             <input
                 type="email"
-                placeholder="Enter your Email"
+                placeholder="Enter Your Email Address"
                 required>
 
-            <button class="btn">
+            <button type="submit">
 
                 Subscribe
 
@@ -1178,74 +956,107 @@
 
     <div class="section-title">
 
-        <span>Contact</span>
+        <span>Contact Us</span>
 
         <h2>Get In Touch</h2>
 
+        <p>
+
+            We'd love to hear from you. Send us your message.
+
+        </p>
+
     </div>
 
-    <div class="contact-wrapper">
+    <div class="contact-container">
+
+        <!-- Left -->
 
         <div class="contact-info">
 
-            <h3>ShopIndia Store</h3>
-
-            <p>
+            <div class="info-box">
 
                 <i class="fa-solid fa-location-dot"></i>
 
-                Ahmedabad, Gujarat
+                <div>
 
-            </p>
+                    <h3>Address</h3>
 
-            <p>
+                    <p>Ahmedabad, Gujarat, India</p>
+
+                </div>
+
+            </div>
+
+            <div class="info-box">
 
                 <i class="fa-solid fa-phone"></i>
 
-                +91 8000747574
+                <div>
 
-            </p>
+                    <h3>Phone</h3>
 
-            <p>
+                    <p>+91 80007 47574</p>
+
+                </div>
+
+            </div>
+
+            <div class="info-box">
 
                 <i class="fa-solid fa-envelope"></i>
 
-                support@shopindia.com
+                <div>
 
-            </p>
+                    <h3>Email</h3>
 
-            <p>
+                    <p>support@shopindia.com</p>
+
+                </div>
+
+            </div>
+
+            <div class="info-box">
 
                 <i class="fa-solid fa-clock"></i>
 
-                Mon - Sat : 9 AM - 8 PM
+                <div>
 
-            </p>
+                    <h3>Working Hours</h3>
+
+                    <p>Mon - Sat : 9:00 AM - 8:00 PM</p>
+
+                </div>
+
+            </div>
 
         </div>
+
+        <!-- Right -->
 
         <form class="contact-form">
 
             <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Full Name"
                 required>
 
             <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Email Address"
                 required>
 
             <input
-                type="tel"
-                placeholder="Mobile Number"
+                type="text"
+                placeholder="Subject"
                 required>
 
             <textarea
                 rows="6"
-                placeholder="Your Message"></textarea>
+                placeholder="Write Your Message..."
+                required></textarea>
 
-            <button class="btn">
+            <button type="submit">
 
                 Send Message
 
@@ -1256,131 +1067,207 @@
     </div>
 
 </section>
-
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer class="footer">
 
     <div class="footer-container">
 
         <div class="footer-box">
 
-            <h2>
-
-                ShopIndia
-
-            </h2>
+            <h2>ShopIndia</h2>
 
             <p>
 
-                India's trusted online electronics shopping website.
-
-                Buy genuine products with warranty.
+                India's trusted online shopping destination for premium electronics,
+                gadgets, accessories and much more.
 
             </p>
 
-        </div>
+            <div class="social-links">
 
-        <div class="footer-box">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
 
-            <h3>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
 
-                Quick Links
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 
-            </h3>
-
-            <a href="#home">Home</a>
-
-            <a href="#products">Products</a>
-
-            <a href="#offers">Offers</a>
-
-            <a href="#reviews">Reviews</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-        <div class="footer-box">
-
-            <h3>
-
-                Customer Support
-
-            </h3>
-
-            <a href="#">Track Order</a>
-
-            <a href="#">Return Policy</a>
-
-            <a href="#">Privacy Policy</a>
-
-            <a href="#">Terms & Conditions</a>
-
-        </div>
-
-        <div class="footer-box">
-
-            <h3>
-
-                Follow Us
-
-            </h3>
-
-            <div class="social-icons">
-
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                <a href="#"><i class="fab fa-instagram"></i></a>
-
-                <a href="#"><i class="fab fa-twitter"></i></a>
-
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
 
             </div>
 
         </div>
 
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#categories">Categories</a></li>
+
+                <li><a href="#products">Products</a></li>
+
+                <li><a href="#offers">Offers</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Customer Support</h3>
+
+            <ul>
+
+                <li><a href="#">Shipping Policy</a></li>
+
+                <li><a href="#">Return Policy</a></li>
+
+                <li><a href="#">Privacy Policy</a></li>
+
+                <li><a href="#">Terms & Conditions</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Info</h3>
+
+            <p><i class="fa-solid fa-location-dot"></i> Ahmedabad, Gujarat</p>
+
+            <p><i class="fa-solid fa-phone"></i> +91 80007 47574</p>
+
+            <p><i class="fa-solid fa-envelope"></i> support@shopindia.com</p>
+
+        </div>
+
     </div>
 
-    <div class="copyright">
+    <div class="footer-bottom">
 
-        © 2026 ShopIndia | All Rights Reserved.
+        <p>
+
+            © 2026 ShopIndia. All Rights Reserved.
+
+        </p>
 
     </div>
 
 </footer>
 
-<!-- ================= POPUP ================= -->
+<!-- ================= CART SIDEBAR ================= -->
 
-<div class="popup" id="popup">
+<div id="cartSidebar" class="cart-sidebar">
 
-    <i class="fa-solid fa-circle-check"></i>
+    <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <button id="closeCart">&times;</button>
+    </div>
 
-    <span>
+    <div id="cartItems"></div>
+	
+    <div class="cart-footer">
 
-        Product Added Successfully
+        <button id="checkoutBtn" class="checkout-btn">
+   	 Proceed to Checkout
+	</button>
 
-    </span>
+	<div id="checkoutForm" class="cart-footer" style="display:none;">
+
+    <h3 class="cart-heading">Customer Details</h3>
+
+    <input type="text" id="customerName" placeholder="Full Name">
+
+    <input type="tel" id="customerMobile" placeholder="Mobile Number">
+
+    <input type="email" id="customerEmail" placeholder="Email (Optional)">
+
+    <textarea id="customerAddress" placeholder="Address"></textarea>
+
+    <input type="text" id="customerCity" placeholder="City">
+
+    <input type="text" id="customerState" placeholder="State">
+
+    <input type="text" id="customerPincode" placeholder="Pincode">
+
+    
+	</div>
+
+        <hr>
+
+        <div class="bill-row">
+            <span>Items Total</span>
+            <span>₹<span id="cartTotal">0</span></span>
+        </div>
+
+        <div class="bill-row">
+            <span>Delivery Charge</span>
+            <span id="deliveryCharge">₹99</span>
+        </div>
+
+        <div class="bill-row">
+            <span>GST (18%)</span>
+            <span id="gstAmount">₹0</span>
+        </div>
+
+        <div class="bill-row total-row">
+            <span>Grand Total</span>
+            <span>₹<span id="grandTotal">0</span></span>
+        </div>
+
+        <button class="checkout-btn" id="placeOrderBtn">
+            <i class="fa-brands fa-whatsapp"></i>
+            Place Order
+        </button>
+
+    </div>
 
 </div>
 
-<!-- ================= FLOATING BUTTONS ================= -->
+<!-- ================= POPUP ================= -->
+
+<div id="popup" class="popup">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span>Success</span>
+
+</div>
+
+<!-- ================= WHATSAPP BUTTON ================= -->
 
 <a href="https://wa.me/918000747574"
-target="_blank"
-class="whatsapp">
 
-<i class="fab fa-whatsapp"></i>
+   class="whatsapp"
 
-</a>
+   target="_blank">
 
-<a href="#home"
-class="back-top">
-
-<i class="fa-solid fa-arrow-up"></i>
+    <i class="fa-brands fa-whatsapp"></i>
 
 </a>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ================= PAGE LOADER ================= -->
+
+<div class="loader">
+
+    <div class="loader-ring"></div>
+
+</div>
 
 <!-- ================= JAVASCRIPT ================= -->
 
