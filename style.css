@@ -1268,6 +1268,7 @@ section{
     color:#fff;
     font-size:26px;
     cursor:pointer;
+    position: relative;
 
 }
 
@@ -1822,4 +1823,38 @@ section{
         font-size:14px;
         padding:13px;
     }
+}
+
+.header-right,
+    .nav-icons{
+        display:flex;
+        align-items:center;
+        gap:12px;
+    }
+
+    #cartBtn{
+        width:42px;
+        height:42px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        position:relative;
+        font-size:22px;
+        margin-right:10px;
+        flex-shrink:0;
+    }
+
+    #cartCount{
+        position:absolute;
+        top:-5px;
+        right:-5px;
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        font-size:11px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
 }
